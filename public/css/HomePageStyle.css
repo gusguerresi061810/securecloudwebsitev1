@@ -1,0 +1,205 @@
+.HomePage-Grid{
+    display: grid;
+    grid-template-rows:1fr auto auto auto auto;
+    grid-template-areas:"Hero" "sub-line" "Pillars" "Services" "Carousels";
+    min-block-size: 100vh;
+    gap:20px;
+    }
+
+.Mainhero-Layout {
+    grid-area: Hero;
+    width: 97vw;
+    height: 70vh;              /* Reasonable hero height */
+    max-height: 700px;         /* Prevents excessive height on large screens */
+    min-height: 320px;         /* Prevents collapse on mobile */
+
+    overflow: hidden;          /* Required for curved edges */
+    border-radius: 24px;       /* Curved edges */
+    margin-left:13px;
+  }
+
+.Mainhero-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Fills hero without distortion */
+    display: block;
+}
+
+.HomePageServices-Layout{
+    grid-area: Services;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap:5px;
+    padding:0 20px;
+    margin-top: clamp(1.25rem, 2.5vw, 2rem);
+    }
+
+.ServiceCards-Layout{
+    width: calc(100vw / 3.2);
+    aspect-ratio: 4 / 3;
+}
+
+.ServiceCards {
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+
+ .ServiceCards:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+.ServiceCards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.HomePage-subline {
+  grid-area: sub-line;
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  padding-left: 1.25rem;
+  text-align: left;
+  background: rgba(255,255,255,0.65);
+  border-left: 3px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.HomePage-subline .subline-lead {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.35rem, 1.6vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.HomePage-subline .subline-support {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  font-weight: 420;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+
+
+
+.ServiceLabel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    padding: 12px 16px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0)
+    );
+
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.CapabilityPillars {
+  grid-area: Pillars;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0 35px;
+  padding-bottom:10px;
+}
+
+.Pillar {
+ 
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 12px 0;
+}
+
+.Pillar h3 {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.Pillar p {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.78;
+  max-width:36ch;
+}
+
+.Carousel_Layout {
+  grid-area: Carousels;
+  text-align: center;
+  overflow:hidden;
+  min-width:0;
+  margin-top: 20px;
+}
+
+.Carousel-Title {
+  font-size: clamp(1.1rem, 0.9rem + 1.2vw, 1.5rem);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 20px 0 40px 0;
+}
+
+.logo-marquee{
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track{
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.logo-track img{
+  height: 35px;
+  width: auto;
+  opacity: 0.75;
+  filter: grayscale(1);
+}
+
+.logo-marquee:hover .logo-track{
+  animation-play-state: paused;
+}
+
+@keyframes marquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .logo-track{ animation: none; }
+}
+
+

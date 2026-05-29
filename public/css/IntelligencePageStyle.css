@@ -1,0 +1,16 @@
+.IntelligencePage-Grid {
+  min-block-size: 100vh;
+  display: grid;
+  grid-template-rows:1fr auto auto;
+  grid-template-areas:"HeroCarousel" "sub-line" "Info";
+}
+
+.intelligence-subline{
+    grid-area: sub-line;
+    background:blue;
+}
+
+.intelligence-info{
+    grid-area: Info;
+    background: yellow;
+}

@@ -1,0 +1,38 @@
+.CollaborationPage-Grid {
+  display: grid;
+  grid-template-rows:1fr auto auto auto;
+  grid-template-areas:"HeroCarousel" 
+                       "Info"
+                       "CollaborationProcess-Row1"
+                       "CollaborationProcess-Row2";
+  gap:20px;
+}
+
+.collaboration-subline{
+    grid-area: sub-line;
+    margin:30px;
+    background:blue;
+}
+
+.collaboration-info{
+    grid-area: Info;
+    margin: 30px;
+    background: #eef2f3; 
+  
+}
+
+.collaboration-Process-Row1{
+    grid-area:CollaborationProcess-Row1;
+    display: flex;
+    align-items: stretch;
+    gap:10px;
+    margin: 0 30px;
+}
+
+.collaboration-Process-Row2{
+    grid-area:CollaborationProcess-Row2;
+    display: flex;
+    align-items: stretch;
+    gap:10px;
+    margin: 0 30px;
+}

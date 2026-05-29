@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Cloud IT | <%= typeof title !== 'undefined' ? title : 'Home' %></title>
+    <link rel="stylesheet" href="css/SiteStyles.css">
+    <link rel="stylesheet" href="css/HeaderStyles.css">
+    <link rel="stylesheet" href="css/HomePageStyle.css">
+    
+    <link rel="stylesheet" href="css/FooterStyles.css">
+    <link rel="stylesheet" href="css/SecurityPageStyle.css">
+    <link rel="stylesheet" href="css/CollaborationPageStyle.css">
+    <link rel="stylesheet" href="css/CarouselTemplateHeroStyle.css">
+    <link rel="stylesheet" href="css/IntelligencePageStyle.css">
+    <link rel="stylesheet" href="css/MobileStyles.css">
+    <link rel="icon" type="image/svg+xml" href="/image/Letter_C_V1.svg"/>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+  <main class="page">
+    <%- body %> 
+   
+       <script src="js/minijs.js" defer></script> 
+       <script src="js/carouseljs.js" defer> </script>
+      
+
+   </main>
+     <%- include('partials/footer') %>
+</body>
+</html>
